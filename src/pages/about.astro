@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { relationTypes } from '../lib/data';
+---
+
+<Layout title="About">
+  <div class="wrap prose">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">About</span>
+    </nav>
+    <h1>
+      Built on the
+      <br />
+      work of <em>many.</em>
+    </h1>
+    <p class="lede">
+      Behind a familiar piece of software is a collection of ideas, tools and decisions. Shoulders
+      is a small invitation to look closer.
+    </p>
+    <h2>What did its creators add?</h2>
+    <p>
+      A runtime does not give you a finished editor. A database does not give you an operated
+      backend. A video encoder does not give you a production desk. Bringing those parts together
+      takes engineering, judgment and care.
+    </p>
+    <p>
+      Each exploration gives that work a place alongside the foundations. You can discover the
+      component, understand its specific role, and find out what using it independently would
+      involve.
+    </p>
+    <h2 id="method">A few connections, carefully chosen.</h2>
+    <p>
+      This edition covers VS Code, Supabase, OBS Studio, Firefox, Blender and Godot. Every
+      connection includes primary sources, a verification date and a scope. An upstream source
+      snapshot does not establish what is installed on your machine or every component in a managed
+      deployment.
+    </p>
+    <p>
+      The architectural plates illustrate the idea of supporting foundations. Their geometry is not
+      a dependency graph. A deeper connection appears only when a source supports it.
+    </p>
+    <h2>From software to physical resources.</h2>
+    <p>
+      Deeper trails distinguish a documented software integration from a selected operating-system
+      example and a general physical foundation. A Linux path does not identify the host behind a
+      managed service. A silicon or electricity connection does not identify its supplier.
+    </p>
+    <p>
+      Materials and energy are separate branches. We do not turn a published retail price into a
+      production cost, or infer a utility, power mix or consumption figure from a dependency.
+    </p>
+    <h2>Words that keep the edges clear.</h2>
+    <dl>
+      {Object.entries(relationTypes).map(([type, meaning]) => (
+        <>
+          <dt>{type[0].toUpperCase() + type.slice(1)}</dt>
+          <dd>{meaning}</dd>
+        </>
+      ))}
+    </dl>
+    <p>
+      None of these relationships establishes payment or endorsement. The curated dataset is
+      intentionally small: an absent connection means we have not documented it here.
+    </p>
+    <h2>Help choose the next exploration.</h2>
+    <p>
+      Have a particular product or foundation in mind? Send its name and, if you have one, a source
+      we should read.
+    </p>
+    <a class="text-link" href="/request/">
+      Suggest an exploration →
+    </a>
+  </div>
+</Layout>

@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Suggest an exploration">
+  <div class="wrap prose">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Suggest an exploration</span>
+    </nav>
+    <h1>
+      What should we
+      <br />
+      <em>look beneath?</em>
+    </h1>
+    <p class="lede">A familiar tool. A surprising foundation. A connection worth understanding.</p>
+    <p>
+      Tell us what you would like to explore next. A link to documentation or source code is
+      welcome.
+    </p>
+    <form
+      id="request-form"
+      class="request-form"
+      action="mailto:sarthakagrawal927@gmail.com"
+      method="get"
+    >
+      <input type="hidden" name="subject" value="Shoulders — exploration request" />
+      <label for="request-body">Your suggestion</label>
+      <textarea
+        id="request-body"
+        name="body"
+        required
+        maxlength="2000"
+        placeholder="I’d like to understand what…"
+        rows="6"
+      ></textarea>
+      <button type="submit">
+        Open email draft <span aria-hidden="true">↗</span>
+      </button>
+      <p class="form-note">
+        This opens your email app. Your suggestion is sent only when you send the email.
+      </p>
+      <p id="request-status" class="request-status" role="status" aria-live="polite"></p>
+    </form>
+    <p class="email-fallback">
+      Or email{' '}
+      <a href="mailto:sarthakagrawal927@gmail.com?subject=Shoulders%20exploration%20request">
+        sarthakagrawal927@gmail.com
+      </a>{' '}
+      directly.
+    </p>
+  </div>
+</Layout>

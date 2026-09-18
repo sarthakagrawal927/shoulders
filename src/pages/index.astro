@@ -1,0 +1,78 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import cutaway from '../data/cutaway.png';
+import { products } from '../lib/data';
+---
+
+<Layout>
+  <section class="hero wrap" aria-labelledby="headline">
+    <div class="hero-copy">
+      <p class="kicker hero-kicker">An exploration of software foundations</p>
+      <h1 id="headline">
+        The software
+        <br />
+        behind your
+        <br />
+        <em>software.</em>
+      </h1>
+      <p class="hero-description">
+        Explore what familiar tools are built on—and what their creators add.
+      </p>
+      <a class="text-link hero-link" href="#explorations">
+        Find a place to start <span aria-hidden="true">↓</span>
+      </a>
+    </div>
+    <figure class="hero-figure">
+      <Image
+        src={cutaway}
+        alt="An architectural cutaway: a glass studio supported by three independent stone arches, each housing a different machine."
+        widths={[600, 900, 1200, 1536]}
+        sizes="(max-width: 700px) 100vw, 60vw"
+        format="webp"
+        quality={83}
+        loading="eager"
+        fetchpriority="high"
+      />
+      <figcaption>
+        <span class="figure-index">Fig. 01</span> What we build. What we build on.
+      </figcaption>
+    </figure>
+  </section>
+  <section class="explorations wrap" id="explorations" aria-labelledby="explorations-title">
+    <div class="section-heading">
+      <h2 id="explorations-title">Six familiar places to begin.</h2>
+      <p>Choose a tool. Follow its foundations.</p>
+    </div>
+    <div class="product-grid">
+      {products.map((product) => (
+        <ProductCard product={product} />
+      ))}
+    </div>
+  </section>
+  <section class="depth-invitation wrap">
+    <p class="kicker">Software is physical</p>
+    <h2>Keep going. All the way to silicon.</h2>
+    <p>
+      Follow a runtime into an operating-system example, then into processors, transistors and
+      electrical power. Every change in evidence scope is marked.
+    </p>
+    <a class="text-link" href="/products/vscode/node/">
+      Start below the editor <span aria-hidden="true">→</span>
+    </a>
+  </section>
+  <section class="closing-note wrap">
+    <span class="small-arch" aria-hidden="true"></span>
+    <div>
+      <h2>The foundation is only part of the story.</h2>
+      <p>
+        The interesting part is what people build with it. Follow the connections, see what each
+        creator contributes, and find a starting point for something of your own.
+      </p>
+    </div>
+    <a class="text-link" href="/about/">
+      A note on Shoulders <span aria-hidden="true">→</span>
+    </a>
+  </section>
+</Layout>

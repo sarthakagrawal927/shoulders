@@ -1,0 +1,42 @@
+---
+import Mark from './Mark.astro';
+import { outgoing, type Product } from '../lib/data';
+interface Props {
+  product: Product;
+}
+const { product: p } = Astro.props;
+---
+
+<a
+  class:list={['product-card', `card-${p.id}`]}
+  href={`/products/${p.id}/`}
+  data-action="product_selected"
+  data-product={p.id}
+>
+  <div class="card-heading">
+    <span class="kicker">{p.category}</span>
+    <span class="card-arrow" aria-hidden="true">
+      ↗
+    </span>
+  </div>
+  <div class="card-plate" aria-hidden="true">
+    <div class="mini-building">
+      <div class="mini-room">
+        <Mark id={p.id} size={50} />
+        <span class="window-line"></span>
+      </div>
+      <div class="mini-foundations">
+        {outgoing(p.id).map(() => (
+          <span></span>
+        ))}
+      </div>
+      <div class="mini-ground"></div>
+    </div>
+    <span class="plate-caption">{outgoing(p.id).length} foundations to uncover</span>
+  </div>
+  <h3>{p.name}</h3>
+  <p>{p.tagline}</p>
+  <span class="text-link">
+    Explore {p.name} <span aria-hidden="true">→</span>
+  </span>
+</a>

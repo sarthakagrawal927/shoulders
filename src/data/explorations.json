@@ -1,0 +1,1016 @@
+{
+  "schemaVersion": 2,
+  "editorial": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "reviewedContentSha256": null
+  },
+  "products": [
+    {
+      "id": "vscode",
+      "name": "VS Code",
+      "category": "Developer tools",
+      "tagline": "A workbench for your code.",
+      "description": "A code editor brings a desktop runtime, a terminal and fast file search into one place to work.",
+      "contribution": "VS Code connects editing, debugging, extensions and terminal sessions into a single developer workbench.",
+      "url": "https://code.visualstudio.com/",
+      "scope": "Desktop VS Code. Browser and remote editions have different runtime boundaries.",
+      "unresolved": "Exact versions in an installed release depend on its build. Source evidence here is pinned to the inspected repository revision."
+    },
+    {
+      "id": "supabase",
+      "name": "Supabase",
+      "category": "Backend platforms",
+      "tagline": "A database, with a platform around it.",
+      "description": "Postgres at the center, with APIs and functions that turn a database into an application backend.",
+      "contribution": "Supabase integrates database access, authentication, APIs, a dashboard and managed operations into a backend platform.",
+      "url": "https://supabase.com/",
+      "scope": "Hosted platform architecture and documented Edge Functions runtime. Self-hosted deployments may differ.",
+      "unresolved": "Hosted infrastructure and rollout versions are not exposed by these sources. The diagram does not claim a complete deployment inventory."
+    },
+    {
+      "id": "obs-studio",
+      "name": "OBS Studio",
+      "category": "Media tools",
+      "tagline": "Many sources. One broadcast.",
+      "description": "A production desk that composes scenes, encodes media and brings web overlays into a live broadcast.",
+      "contribution": "OBS adds scene composition, source controls, an audio mixer and the recording and streaming workflow.",
+      "url": "https://obsproject.com/",
+      "scope": "Desktop OBS Studio with the named plugins enabled. Platform packages and custom builds vary.",
+      "unresolved": "Browser-source and encoder availability depend on the installed build. A foundation shown here need not be used in every recording."
+    },
+    {
+      "id": "firefox",
+      "name": "Firefox",
+      "category": "Web browsers",
+      "tagline": "A window onto the web.",
+      "description": "A browser joins page rendering, JavaScript execution and secure networking into one browsing experience.",
+      "contribution": "Firefox adds tabs, navigation, privacy controls, profiles, extensions and a maintained browser experience.",
+      "url": "https://www.firefox.com/",
+      "scope": "Desktop Firefox. Gecko is an umbrella engine; the selected components describe distinct capabilities, not isolated packages.",
+      "unresolved": "This is a source-level explanation. An installed release, operating system and hardware configuration must be checked separately."
+    },
+    {
+      "id": "blender",
+      "name": "Blender",
+      "category": "Creative tools",
+      "tagline": "From a scene to a finished frame.",
+      "description": "A creation suite connects rendering, color management and movie processing to an artist’s scene.",
+      "contribution": "Blender adds modelling, animation, scene editing and production workflows around rendering and media components. Cycles is developed by the Blender project itself.",
+      "url": "https://www.blender.org/",
+      "scope": "Desktop Blender with Cycles and FFmpeg enabled. Other renderers and custom builds differ.",
+      "unresolved": "A source build option establishes an available integration, not every shipped binary or selected render device."
+    },
+    {
+      "id": "godot",
+      "name": "Godot",
+      "category": "Game creation",
+      "tagline": "The tools behind a playable world.",
+      "description": "A game engine connects physics, font rasterization and text shaping to scenes and interactive worlds.",
+      "contribution": "Godot adds the editor, scene system, scripting, resource pipeline and export workflow that turn libraries into a game-making environment.",
+      "url": "https://godotengine.org/",
+      "scope": "Godot 4.x with Jolt selected for 3D physics and the advanced text server. Jolt entered core in 4.4; defaults vary by release.",
+      "unresolved": "Physics backends and text-server build options vary. This trail does not identify the hardware running a particular game."
+    }
+  ],
+  "foundations": [
+    {
+      "id": "electron",
+      "name": "Electron",
+      "kind": "Desktop runtime",
+      "description": "A toolkit for building desktop applications with web technologies. It combines Chromium and Node.js with desktop APIs.",
+      "url": "https://www.electronjs.org/",
+      "docs": "https://www.electronjs.org/docs/latest/",
+      "responsibilities": "You supply the interface and application logic, secure the browser-to-system boundary, and maintain packaging and updates.",
+      "layer": "software",
+      "boundary": "No deeper connection has been reviewed for this component yet."
+    },
+    {
+      "id": "xterm",
+      "name": "xterm.js",
+      "kind": "Terminal interface",
+      "description": "A browser-based terminal component. It displays terminal output and accepts input; the shell runs elsewhere.",
+      "url": "https://xtermjs.org/",
+      "docs": "https://xtermjs.org/docs/",
+      "responsibilities": "Connect it to a shell through a pseudo-terminal or a remote service. Handle process lifetimes, transport, access control and terminal sizing.",
+      "layer": "software",
+      "boundary": "No deeper connection has been reviewed for this component yet."
+    },
+    {
+      "id": "ripgrep",
+      "name": "ripgrep",
+      "kind": "File search",
+      "description": "A command-line search tool that searches file contents using regular expressions and respects ignore rules by default.",
+      "url": "https://github.com/BurntSushi/ripgrep",
+      "docs": "https://github.com/BurntSushi/ripgrep#installation",
+      "responsibilities": "Choose search roots and flags, invoke the executable, and present its results. An editor integration also needs cancellation and navigation.",
+      "layer": "software",
+      "boundary": "No deeper connection has been reviewed for this component yet."
+    },
+    {
+      "id": "postgres",
+      "name": "PostgreSQL",
+      "kind": "Relational database",
+      "description": "A relational database that stores structured data and runs SQL queries, with transactions and an extensible type system.",
+      "url": "https://www.postgresql.org/",
+      "docs": "https://www.postgresql.org/docs/current/",
+      "responsibilities": "Design your schema and access policies, arrange hosting and backups, and manage upgrades, monitoring and recovery.",
+      "layer": "software",
+      "boundary": "No deeper connection has been reviewed for this component yet."
+    },
+    {
+      "id": "postgrest",
+      "name": "PostgREST",
+      "kind": "Database API",
+      "description": "A standalone server that exposes a PostgreSQL database through an HTTP API, using the database schema and permissions.",
+      "url": "https://postgrest.org/",
+      "docs": "https://docs.postgrest.org/en/stable/",
+      "responsibilities": "Run PostgREST alongside Postgres. Configure database roles, authentication, network access and schema changes.",
+      "layer": "software",
+      "boundary": "No deeper connection has been reviewed for this component yet."
+    },
+    {
+      "id": "deno",
+      "name": "Deno",
+      "kind": "Function runtime",
+      "description": "A runtime for executing JavaScript and TypeScript outside the browser. Supabase uses a Deno-based runtime for Edge Functions.",
+      "url": "https://deno.com/",
+      "docs": "https://docs.deno.com/runtime/",
+      "responsibilities": "Write and deploy your service, set permissions, manage secrets securely, and arrange routing, monitoring and scaling.",
+      "layer": "software",
+      "boundary": "No deeper connection has been reviewed for this component yet."
+    },
+    {
+      "id": "ffmpeg",
+      "name": "FFmpeg",
+      "kind": "Media toolkit",
+      "description": "Libraries and command-line tools for processing audio and video, including decoding, encoding and container handling.",
+      "url": "https://ffmpeg.org/",
+      "docs": "https://ffmpeg.org/documentation.html",
+      "responsibilities": "Build a media pipeline around the formats you need. Handle timestamps, buffering, errors and the capabilities of your chosen build.",
+      "layer": "software",
+      "boundary": "No deeper connection has been reviewed for this component yet."
+    },
+    {
+      "id": "qt",
+      "name": "Qt",
+      "kind": "Desktop interface",
+      "description": "A cross-platform application framework. Its Widgets module provides desktop controls, layouts and windows.",
+      "url": "https://www.qt.io/",
+      "docs": "https://doc.qt.io/qt-6/qtwidgets-index.html",
+      "responsibilities": "Build the application behavior, layouts and accessibility; integrate platform services and package your app. Review the license for your distribution.",
+      "layer": "software",
+      "boundary": "No deeper connection has been reviewed for this component yet."
+    },
+    {
+      "id": "cef",
+      "name": "Chromium Embedded Framework",
+      "kind": "Embedded browser",
+      "description": "Usually called CEF: a framework for embedding Chromium-based browsers inside other applications.",
+      "url": "https://github.com/chromiumembedded/cef",
+      "docs": "https://github.com/chromiumembedded/cef/wiki/GeneralUsage",
+      "responsibilities": "Integrate rendering, input and browser lifetimes into your application. Maintain the embedded runtime and define its security boundaries.",
+      "layer": "software",
+      "boundary": "No deeper connection has been reviewed for this component yet."
+    },
+    {
+      "id": "chromium",
+      "name": "Chromium",
+      "kind": "Browser platform",
+      "description": "The open-source browser project behind the browser technology embedded by both Electron and CEF.",
+      "url": "https://www.chromium.org/",
+      "docs": "https://www.chromium.org/developers/",
+      "responsibilities": "Choose an embedding layer such as Electron or CEF, or work with Chromium source directly. Plan for security updates, builds and application integration.",
+      "layer": "software",
+      "boundary": "No deeper connection has been reviewed for this component yet."
+    },
+    {
+      "id": "node",
+      "name": "Node.js",
+      "kind": "JavaScript runtime",
+      "description": "A JavaScript runtime with APIs for work outside the browser, including files, processes and networking.",
+      "url": "https://nodejs.org/",
+      "docs": "https://nodejs.org/en/learn/getting-started/introduction-to-nodejs",
+      "responsibilities": "Supply the application and manage dependencies, permissions, errors and deployment. A desktop interface requires an additional layer.",
+      "layer": "software",
+      "boundary": "No deeper connection has been reviewed for this component yet."
+    },
+    {
+      "id": "gecko",
+      "name": "Gecko",
+      "kind": "Web engine",
+      "description": "Mozilla’s engine for rendering web content and supporting browser services. Firefox also uses it to render its own interface.",
+      "url": "https://firefox-source-docs.mozilla.org/overview/gecko.html",
+      "docs": "https://firefox-source-docs.mozilla.org/browser/overview.html",
+      "responsibilities": "Building from Gecko means taking on browser integration, release engineering and security maintenance. It is not a drop-in replacement for the complete Firefox application.",
+      "layer": "software",
+      "boundary": "No deeper connection has been reviewed for this component yet."
+    },
+    {
+      "id": "spidermonkey",
+      "name": "SpiderMonkey",
+      "kind": "JavaScript engine",
+      "description": "Mozilla’s JavaScript and WebAssembly engine, used by Firefox. Its standalone shell offers access outside the full browser.",
+      "url": "https://spidermonkey.dev/",
+      "docs": "https://firefox-source-docs.mozilla.org/js/build.html",
+      "responsibilities": "You provide the embedding application, host APIs, lifecycle and security boundaries. The standalone shell does not supply a browser interface.",
+      "layer": "software",
+      "boundary": "No deeper connection has been reviewed for this component yet."
+    },
+    {
+      "id": "nss",
+      "name": "NSS",
+      "kind": "Security library",
+      "description": "Network Security Services is a collection of libraries for security-enabled applications, including cryptographic and TLS functionality.",
+      "url": "https://firefox-source-docs.mozilla.org/security/nss/index.html",
+      "docs": "https://firefox-source-docs.mozilla.org/security/nss/index.html",
+      "responsibilities": "Integrate the library with your networking stack and maintain certificate policy, error handling and updates. A crypto library alone does not secure an application.",
+      "layer": "software",
+      "boundary": "No deeper connection has been reviewed for this component yet."
+    },
+    {
+      "id": "cycles",
+      "name": "Cycles",
+      "kind": "Production renderer",
+      "description": "A physically based renderer developed by the Blender project. It can also be integrated into other software.",
+      "url": "https://www.cycles-renderer.org/",
+      "docs": "https://www.cycles-renderer.org/features/",
+      "responsibilities": "Using the renderer independently means supplying scenes, materials, asset handling and an interface or batch pipeline. Render capacity still needs hardware.",
+      "layer": "software",
+      "boundary": "No deeper connection has been reviewed for this component yet."
+    },
+    {
+      "id": "opencolorio",
+      "name": "OpenColorIO",
+      "kind": "Color management",
+      "description": "A color-management library for applying configured transformations between image color spaces and display views.",
+      "url": "https://opencolorio.org/",
+      "docs": "https://opencolorio.readthedocs.io/en/v2.4.0/guides/using_ocio/using_ocio.html",
+      "responsibilities": "Supply a suitable color configuration and integrate transforms into your image pipeline. Monitor calibration and consistent asset interpretation remain your responsibility.",
+      "layer": "software",
+      "boundary": "No deeper connection has been reviewed for this component yet."
+    },
+    {
+      "id": "jolt",
+      "name": "Jolt Physics",
+      "kind": "Physics simulation",
+      "description": "A C++ library for rigid-body simulation and collision detection, designed to work across multiple cores.",
+      "url": "https://github.com/jrouwe/JoltPhysics",
+      "docs": "https://jrouwe.github.io/JoltPhysics/",
+      "responsibilities": "You integrate object lifecycles, collision shapes, simulation timing and game logic. Godot’s scene nodes and editor workflow do not come with the standalone library.",
+      "layer": "software",
+      "boundary": "No deeper connection has been reviewed for this component yet."
+    },
+    {
+      "id": "freetype",
+      "name": "FreeType",
+      "kind": "Font rasterization",
+      "description": "A library for loading font formats and rendering glyphs. It supplies a building block for readable text.",
+      "url": "https://freetype.org/",
+      "docs": "https://freetype.org/freetype2/docs/",
+      "responsibilities": "Choose and license your fonts, manage glyph caches and integrate drawing. Text shaping and a complete UI layout engine are separate responsibilities.",
+      "layer": "software",
+      "boundary": "No deeper connection has been reviewed for this component yet."
+    },
+    {
+      "id": "harfbuzz",
+      "name": "HarfBuzz",
+      "kind": "Text shaping",
+      "description": "A shaping engine that turns Unicode text and a font into positioned glyphs, including complex script behavior.",
+      "url": "https://harfbuzz.github.io/",
+      "docs": "https://harfbuzz.github.io/shaping-concepts.html",
+      "responsibilities": "Provide fonts, segment the text appropriately and draw the shaped glyphs. Shaping does not provide a complete widget toolkit or font rasterizer.",
+      "layer": "software",
+      "boundary": "No deeper connection has been reviewed for this component yet."
+    },
+    {
+      "id": "v8",
+      "name": "V8",
+      "kind": "JavaScript engine",
+      "description": "An embeddable JavaScript and WebAssembly engine. Node.js uses it to execute JavaScript outside a browser.",
+      "url": "https://v8.dev/",
+      "docs": "https://v8.dev/docs/embed",
+      "responsibilities": "Embedding V8 gives you an engine; you supply host APIs, I/O integration, lifecycle management and isolation. Browser APIs are not supplied by V8 alone.",
+      "layer": "software",
+      "boundary": "No deeper connection has been reviewed for this component yet."
+    },
+    {
+      "id": "linux",
+      "name": "Linux",
+      "kind": "Operating-system kernel",
+      "description": "The kernel manages processes, memory and access to devices. Here, Linux is an explicitly selected execution example, not a claim about every product installation.",
+      "url": "https://www.kernel.org/",
+      "docs": "https://docs.kernel.org/",
+      "responsibilities": "A usable system also needs user-space software, drivers and administration. Running it yourself means managing updates, access, storage and recovery.",
+      "layer": "platform",
+      "boundary": "This trail selects a Linux system on an x86 processor. Other operating systems and CPU architectures are possible; no particular host is identified."
+    },
+    {
+      "id": "cpu",
+      "name": "Processor",
+      "kind": "Physical computing",
+      "description": "A processor fetches, decodes and executes machine instructions. This trail uses contemporary silicon processors as its hardware example.",
+      "url": "https://www.intel.com/content/www/us/en/education/k12/the-journey-inside/explore-the-curriculum/microprocessors.html",
+      "docs": "https://www.kernel.org/doc/html/latest/arch/x86/index.html",
+      "responsibilities": "You can use a local computer or rent compute, but memory, storage, cooling and power still matter. A processor alone is not a usable application platform.",
+      "layer": "hardware",
+      "boundary": "The processor vendor, model, fabrication plant and machine behind any visitor or managed service are not identified here."
+    },
+    {
+      "id": "transistors",
+      "name": "Transistors",
+      "kind": "Switching devices",
+      "description": "Tiny electronic switches are arranged into circuits that implement processor logic and storage. This trail concerns silicon-based computer chips.",
+      "url": "https://www.intel.com/content/www/us/en/newsroom/tech101/the-transistor-explained.html",
+      "docs": "https://www.intel.com/content/www/us/en/newsroom/tech101/the-transistor-explained.html",
+      "responsibilities": "At this level you are designing circuits, not installing a software dependency. Chip design also requires interconnects, fabrication, packaging and verification.",
+      "layer": "hardware",
+      "boundary": "The illustration is conceptual. We do not identify a process node, foundry or transistor design for an actual product deployment."
+    },
+    {
+      "id": "silicon",
+      "name": "Silicon",
+      "kind": "Semiconductor material",
+      "description": "A semiconductor material used as the foundation for the silicon-based transistors in this trail. Manufacturing creates patterned devices on wafers.",
+      "url": "https://www.intel.com/content/www/us/en/newsroom/tech101/the-transistor-explained.html",
+      "docs": "https://www.intel.com/content/www/us/en/education/k12/the-journey-inside/explore-the-curriculum/microprocessors.html",
+      "responsibilities": "Raw material does not replace a processor. Purification, wafer production, fabrication, packaging and testing require specialized industrial capabilities.",
+      "layer": "material",
+      "boundary": "The evidence stops at the material. No mine, wafer supplier or fabrication site has been established for these software products."
+    },
+    {
+      "id": "electricity",
+      "name": "Electricity",
+      "kind": "Energy input",
+      "description": "Computing hardware needs electrical energy to operate. Delivering a computing service also involves power conversion, cooling and other supporting equipment.",
+      "url": "https://www.energy.gov/cmei/buildings/data-centers-and-servers",
+      "docs": "https://www.energy.gov/hgeo/geothermal/geothermal-and-data-centers",
+      "responsibilities": "Self-hosting changes who manages the machine; it does not remove its energy needs. Consumption depends on the equipment, workload and operating conditions.",
+      "layer": "energy",
+      "boundary": "No utility, generator, energy mix, per-request consumption or electricity price is known for these product examples. Those require deployment-specific evidence."
+    }
+  ],
+  "relationships": [
+    {
+      "id": "vscode--electron",
+      "source": "vscode",
+      "target": "electron",
+      "type": "built with",
+      "capability": "Desktop runtime",
+      "provides": "Electron gives desktop VS Code a web rendering environment and access to desktop application APIs.",
+      "adds": "The editor workbench, extension integration, debugging interface and workspace experience are VS Code’s work.",
+      "evidence": [
+        {
+          "url": "https://code.visualstudio.com/docs/supporting/faq",
+          "title": "VS Code: Electron shell"
+        },
+        {
+          "url": "https://www.electronjs.org/docs/latest/",
+          "title": "Electron: architecture and APIs"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Desktop VS Code; not vscode.dev.",
+      "status": "documented",
+      "note": "",
+      "basis": "implementation"
+    },
+    {
+      "id": "vscode--xterm",
+      "source": "vscode",
+      "target": "xterm",
+      "type": "built with",
+      "capability": "Integrated terminal",
+      "provides": "xterm.js provides the terminal display and input surface inside VS Code.",
+      "adds": "VS Code connects terminal sessions to the workspace and adds terminal management and shell integration.",
+      "evidence": [
+        {
+          "url": "https://xtermjs.org/",
+          "title": "xterm.js: documented VS Code use"
+        },
+        {
+          "url": "https://github.com/microsoft/vscode/blob/2886f6d669831dfaed883670cdabf7cf31c8df67/package.json",
+          "title": "VS Code: pinned terminal dependencies"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Desktop terminal UI; source revision 2886f6d.",
+      "status": "documented",
+      "note": "A terminal component is not itself a shell.",
+      "basis": "implementation"
+    },
+    {
+      "id": "vscode--ripgrep",
+      "source": "vscode",
+      "target": "ripgrep",
+      "type": "powered by",
+      "capability": "Workspace file search",
+      "provides": "VS Code consumes a packaged ripgrep binary for its file-search implementation.",
+      "adds": "VS Code turns matches into a navigable search view, with editor locations, include/exclude controls and cancellation.",
+      "evidence": [
+        {
+          "url": "https://github.com/microsoft/vscode/blob/2886f6d669831dfaed883670cdabf7cf31c8df67/package.json",
+          "title": "VS Code: pinned ripgrep dependency"
+        },
+        {
+          "url": "https://github.com/microsoft/vscode-ripgrep",
+          "title": "Microsoft: ripgrep packaging"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Source revision 2886f6d; package @vscode/ripgrep-universal.",
+      "status": "documented",
+      "note": "The packaged binary and the upstream ripgrep project are distinct distribution layers.",
+      "basis": "implementation"
+    },
+    {
+      "id": "supabase--postgres",
+      "source": "supabase",
+      "target": "postgres",
+      "type": "powered by",
+      "capability": "Database and SQL",
+      "provides": "Postgres is the database at the center of a Supabase project. You can connect to the database directly.",
+      "adds": "Supabase adds a management interface, service integrations and, on the hosted platform, managed database operations.",
+      "evidence": [
+        {
+          "url": "https://supabase.com/docs/guides/database/overview",
+          "title": "Supabase: Postgres database"
+        },
+        {
+          "url": "https://supabase.com/docs/guides/deployment/shared-responsibility-model",
+          "title": "Supabase: operational responsibilities"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Hosted Supabase database; documentation verified 2026-09-14.",
+      "status": "documented",
+      "note": "",
+      "basis": "implementation"
+    },
+    {
+      "id": "supabase--postgrest",
+      "source": "supabase",
+      "target": "postgrest",
+      "type": "powered by",
+      "capability": "Generated REST API",
+      "provides": "PostgREST exposes database tables and functions through Supabase’s REST API.",
+      "adds": "Supabase integrates API access with project configuration, authentication and database policies.",
+      "evidence": [
+        {
+          "url": "https://supabase.com/docs/guides/api",
+          "title": "Supabase: Data REST API"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Supabase REST data API; other API surfaces use different components.",
+      "status": "documented",
+      "note": "",
+      "basis": "implementation"
+    },
+    {
+      "id": "supabase--deno",
+      "source": "supabase",
+      "target": "deno",
+      "type": "runs on",
+      "capability": "Edge Functions",
+      "provides": "Supabase Edge Functions execute on a Deno-based runtime.",
+      "adds": "Supabase supplies the function deployment workflow and platform integration around that runtime.",
+      "evidence": [
+        {
+          "url": "https://supabase.com/docs/guides/functions/architecture",
+          "title": "Supabase: Edge Functions architecture"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Edge Functions execution only; not the whole Supabase backend.",
+      "status": "documented",
+      "note": "The managed Edge Runtime is Deno-based; this is not a claim that every Deno API is supported.",
+      "basis": "implementation"
+    },
+    {
+      "id": "obs-studio--ffmpeg",
+      "source": "obs-studio",
+      "target": "ffmpeg",
+      "type": "built with",
+      "capability": "Media processing",
+      "provides": "OBS’s FFmpeg plugin links media libraries for codec and container work.",
+      "adds": "OBS routes sources through its scene and output pipeline, with recording settings and live production controls.",
+      "evidence": [
+        {
+          "url": "https://github.com/obsproject/obs-studio/blob/caaa0223401f2195128f9998265a0f66d84c9a02/plugins/obs-ffmpeg/CMakeLists.txt",
+          "title": "OBS: pinned FFmpeg integration"
+        },
+        {
+          "url": "https://github.com/obsproject/obs-studio/blob/caaa0223401f2195128f9998265a0f66d84c9a02/docs/sphinx/plugins.rst",
+          "title": "OBS: output and encoder interfaces"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "obs-ffmpeg enabled; source revision caaa022.",
+      "status": "documented",
+      "note": "Available codecs depend on the FFmpeg build and OBS configuration.",
+      "basis": "implementation"
+    },
+    {
+      "id": "obs-studio--qt",
+      "source": "obs-studio",
+      "target": "qt",
+      "type": "built with",
+      "capability": "Desktop controls",
+      "provides": "Qt Widgets supplies desktop interface primitives used by OBS’s frontend.",
+      "adds": "OBS builds its scene list, settings, docks and production controls around its own media engine.",
+      "evidence": [
+        {
+          "url": "https://github.com/obsproject/obs-studio/blob/caaa0223401f2195128f9998265a0f66d84c9a02/frontend/cmake/ui-qt.cmake",
+          "title": "OBS: pinned Qt Widgets linkage"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Qt 6 frontend; source revision caaa022.",
+      "status": "documented",
+      "note": "Qt provides interface tools, not OBS’s audio/video composition engine.",
+      "basis": "implementation"
+    },
+    {
+      "id": "obs-studio--cef",
+      "source": "obs-studio",
+      "target": "cef",
+      "type": "built with",
+      "capability": "Browser sources",
+      "provides": "The obs-browser plugin uses CEF to render web-based sources and overlays.",
+      "adds": "OBS places those browser sources inside scenes and connects their visibility and activity to the production workflow.",
+      "evidence": [
+        {
+          "url": "https://github.com/obsproject/obs-browser/blob/f555da02b1d5910008958ca377e0f1a3889eb023/README.md",
+          "title": "OBS Browser: CEF-powered browser sources"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "obs-browser plugin enabled; source revision f555da0.",
+      "status": "documented",
+      "note": "This relationship applies to browser sources and browser docks, not all of OBS.",
+      "basis": "implementation"
+    },
+    {
+      "id": "electron--chromium",
+      "source": "electron",
+      "target": "chromium",
+      "type": "built with",
+      "capability": "Web rendering",
+      "provides": "Electron embeds Chromium to render application interfaces built with web technologies.",
+      "adds": "Electron adds desktop application APIs and integrates the renderer with its application process model.",
+      "evidence": [
+        {
+          "url": "https://www.electronjs.org/docs/latest/",
+          "title": "Electron: Chromium and Node.js"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Electron architecture; bundled Chromium version varies by Electron release.",
+      "status": "documented",
+      "note": "",
+      "basis": "implementation"
+    },
+    {
+      "id": "electron--node",
+      "source": "electron",
+      "target": "node",
+      "type": "built with",
+      "capability": "System-side JavaScript",
+      "provides": "Electron incorporates Node.js for JavaScript work outside the browser renderer.",
+      "adds": "Electron coordinates application windows and processes, including the boundaries between renderer and system access.",
+      "evidence": [
+        {
+          "url": "https://www.electronjs.org/docs/latest/",
+          "title": "Electron: Chromium and Node.js"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Electron main process and permitted contexts; renderer access depends on security settings.",
+      "status": "documented",
+      "note": "",
+      "basis": "implementation"
+    },
+    {
+      "id": "cef--chromium",
+      "source": "cef",
+      "target": "chromium",
+      "type": "built with",
+      "capability": "Embedded web rendering",
+      "provides": "CEF embeds Chromium-based browser capabilities inside a host application.",
+      "adds": "CEF supplies embedding APIs and integration hooks that a host such as OBS can use.",
+      "evidence": [
+        {
+          "url": "https://github.com/chromiumembedded/cef",
+          "title": "CEF: Chromium embedding framework"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "CEF architecture; browser capabilities and versions follow the chosen CEF build.",
+      "status": "documented",
+      "note": "",
+      "basis": "implementation"
+    },
+    {
+      "id": "firefox--gecko",
+      "source": "firefox",
+      "target": "gecko",
+      "type": "built with",
+      "capability": "Web rendering",
+      "provides": "Gecko renders web pages and Firefox’s browser interface.",
+      "adds": "Firefox supplies the browsing workflow, tabs and user controls.",
+      "evidence": [
+        {
+          "url": "https://firefox-source-docs.mozilla.org/browser/overview.html",
+          "title": "Firefox desktop architecture"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Desktop Firefox; Gecko includes more than the rendering subsystem.",
+      "status": "documented",
+      "basis": "implementation",
+      "note": ""
+    },
+    {
+      "id": "firefox--spidermonkey",
+      "source": "firefox",
+      "target": "spidermonkey",
+      "type": "powered by",
+      "capability": "JavaScript execution",
+      "provides": "SpiderMonkey executes JavaScript and WebAssembly for Firefox.",
+      "adds": "Firefox supplies browser APIs, navigation and the surrounding application.",
+      "evidence": [
+        {
+          "url": "https://firefox-source-docs.mozilla.org/js/",
+          "title": "SpiderMonkey in Firefox"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Firefox’s engine, not an external hosted JavaScript service.",
+      "status": "documented",
+      "basis": "implementation",
+      "note": ""
+    },
+    {
+      "id": "firefox--nss",
+      "source": "firefox",
+      "target": "nss",
+      "type": "built with",
+      "capability": "Secure networking",
+      "provides": "Gecko’s networking uses NSS for cryptography, including TLS.",
+      "adds": "Firefox integrates network security with browser identity, permissions and user-facing controls.",
+      "evidence": [
+        {
+          "url": "https://firefox-source-docs.mozilla.org/overview/gecko.html",
+          "title": "Gecko networking and NSS"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "NSS appears within Firefox’s Gecko networking stack.",
+      "status": "documented",
+      "basis": "implementation",
+      "note": ""
+    },
+    {
+      "id": "blender--cycles",
+      "source": "blender",
+      "target": "cycles",
+      "type": "powered by",
+      "capability": "Scene rendering",
+      "provides": "Cycles renders scenes when chosen as Blender’s render engine.",
+      "adds": "Blender adds scene authoring, animation and the renderer’s artist-facing integration. Cycles is also Blender-developed.",
+      "evidence": [
+        {
+          "url": "https://github.com/blender/blender/blob/349fc27092df84267860aacbb70987fe9adc1e47/CMakeLists.txt",
+          "title": "Blender source: Cycles build integration"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Inspected source revision with WITH_CYCLES enabled; not the Eevee renderer.",
+      "status": "documented",
+      "basis": "implementation",
+      "note": ""
+    },
+    {
+      "id": "blender--opencolorio",
+      "source": "blender",
+      "target": "opencolorio",
+      "type": "built with",
+      "capability": "Color transforms",
+      "provides": "OpenColorIO supplies color processing within Blender’s color-management system.",
+      "adds": "Blender integrates configured views and transforms into its editing and output workflows.",
+      "evidence": [
+        {
+          "url": "https://github.com/blender/blender/blob/349fc27092df84267860aacbb70987fe9adc1e47/source/blender/imbuf/intern/colormanagement.cc",
+          "title": "Blender source: color management"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Inspected source snapshot; color configuration is separate from the library.",
+      "status": "documented",
+      "basis": "implementation",
+      "note": ""
+    },
+    {
+      "id": "blender--ffmpeg",
+      "source": "blender",
+      "target": "ffmpeg",
+      "type": "built with",
+      "capability": "Movie processing",
+      "provides": "Blender’s movie module links FFmpeg when codec support is enabled.",
+      "adds": "Blender connects media processing with its scenes, timeline and output controls.",
+      "evidence": [
+        {
+          "url": "https://github.com/blender/blender/blob/349fc27092df84267860aacbb70987fe9adc1e47/source/blender/imbuf/movie/CMakeLists.txt",
+          "title": "Blender source: movie module dependencies"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "WITH_CODEC_FFMPEG build option; codec availability depends on the build.",
+      "status": "documented",
+      "basis": "implementation",
+      "note": ""
+    },
+    {
+      "id": "godot--jolt",
+      "source": "godot",
+      "target": "jolt",
+      "type": "powered by",
+      "capability": "3D physics",
+      "provides": "Jolt supplies collision detection and rigid-body simulation when selected as the 3D physics backend.",
+      "adds": "Godot adds scene nodes, editor controls and integration with game logic.",
+      "evidence": [
+        {
+          "url": "https://docs.godotengine.org/en/stable/tutorials/physics/using_jolt_physics.html",
+          "title": "Godot: using Jolt Physics"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Built-in option since Godot 4.4. Applies to Jolt-backed 3D physics, not 2D physics or every project.",
+      "status": "documented",
+      "basis": "implementation",
+      "note": ""
+    },
+    {
+      "id": "godot--freetype",
+      "source": "godot",
+      "target": "freetype",
+      "type": "built with",
+      "capability": "Glyph rendering",
+      "provides": "FreeType contributes font rasterization and hinting to Godot’s dynamic-font system.",
+      "adds": "Godot supplies font resources, themes and UI controls.",
+      "evidence": [
+        {
+          "url": "https://docs.godotengine.org/en/stable/tutorials/ui/gui_using_fonts.html",
+          "title": "Godot: dynamic fonts and FreeType"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Godot dynamic-font path; bitmap fonts have different processing.",
+      "status": "documented",
+      "basis": "implementation",
+      "note": ""
+    },
+    {
+      "id": "godot--harfbuzz",
+      "source": "godot",
+      "target": "harfbuzz",
+      "type": "built with",
+      "capability": "Text shaping",
+      "provides": "Godot’s advanced text server uses HarfBuzz for shaping text.",
+      "adds": "Godot combines shaping with font resources, layout and interactive controls.",
+      "evidence": [
+        {
+          "url": "https://docs.godotengine.org/en/stable/classes/class_textserveradvanced.html",
+          "title": "Godot: TextServerAdvanced"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Advanced text server; custom builds may use a different text server.",
+      "status": "documented",
+      "basis": "implementation",
+      "note": ""
+    },
+    {
+      "id": "node--v8",
+      "source": "node",
+      "target": "v8",
+      "type": "built with",
+      "capability": "Language execution",
+      "provides": "V8 executes JavaScript within Node.js.",
+      "adds": "Node adds I/O, modules and host APIs around the language engine.",
+      "evidence": [
+        {
+          "url": "https://nodejs.org/learn/getting-started/introduction-to-nodejs",
+          "title": "Node.js: introduction"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Node.js runtime; V8 alone does not include Node’s standard library.",
+      "status": "documented",
+      "basis": "implementation",
+      "note": ""
+    },
+    {
+      "id": "v8--linux",
+      "source": "v8",
+      "target": "linux",
+      "type": "runs on",
+      "capability": "Host operating system",
+      "provides": "The language engine executes within a Linux process.",
+      "adds": "V8 contributes language execution and memory management.",
+      "evidence": [
+        {
+          "url": "https://v8.dev/docs",
+          "title": "V8: supported systems"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Selected Linux execution example only. This is not a trace of a visitor’s installation or a managed-service deployment.",
+      "status": "documented",
+      "basis": "platform-example",
+      "note": "Other operating systems are supported. Follow this path as an example, not a universal dependency."
+    },
+    {
+      "id": "postgres--linux",
+      "source": "postgres",
+      "target": "linux",
+      "type": "runs on",
+      "capability": "Host operating system",
+      "provides": "PostgreSQL can run on Linux, which supplies its host operating-system facilities.",
+      "adds": "PostgreSQL implements SQL, transactions and database storage above the host system.",
+      "evidence": [
+        {
+          "url": "https://www.postgresql.org/docs/current/supported-platforms.html",
+          "title": "PostgreSQL: supported platforms"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Selected Linux execution example only. This is not a trace of a visitor’s installation or a managed-service deployment.",
+      "status": "documented",
+      "basis": "platform-example",
+      "note": "Other operating systems are supported. Follow this path as an example, not a universal dependency."
+    },
+    {
+      "id": "spidermonkey--linux",
+      "source": "spidermonkey",
+      "target": "linux",
+      "type": "runs on",
+      "capability": "Host operating system",
+      "provides": "A Linux build of SpiderMonkey runs using the host system’s facilities.",
+      "adds": "SpiderMonkey supplies the language engine above that operating system.",
+      "evidence": [
+        {
+          "url": "https://firefox-source-docs.mozilla.org/js/build.html",
+          "title": "SpiderMonkey: Linux build and test path"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Selected Linux execution example only. This is not a trace of a visitor’s installation or a managed-service deployment.",
+      "status": "documented",
+      "basis": "platform-example",
+      "note": "Other operating systems are supported. Follow this path as an example, not a universal dependency."
+    },
+    {
+      "id": "jolt--linux",
+      "source": "jolt",
+      "target": "linux",
+      "type": "runs on",
+      "capability": "Host operating system",
+      "provides": "Jolt supports Linux, including x64 machines.",
+      "adds": "Jolt supplies physics algorithms and simulation above the host system.",
+      "evidence": [
+        {
+          "url": "https://github.com/jrouwe/JoltPhysics",
+          "title": "Jolt: supported platforms"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Selected Linux execution example only. This is not a trace of a visitor’s installation or a managed-service deployment.",
+      "status": "documented",
+      "basis": "platform-example",
+      "note": "Other operating systems are supported. Follow this path as an example, not a universal dependency."
+    },
+    {
+      "id": "ffmpeg--linux",
+      "source": "ffmpeg",
+      "target": "linux",
+      "type": "runs on",
+      "capability": "Host operating system",
+      "provides": "A Linux build of FFmpeg processes media using host system facilities.",
+      "adds": "FFmpeg supplies media libraries above the operating system.",
+      "evidence": [
+        {
+          "url": "https://ffmpeg.org/download.html",
+          "title": "FFmpeg: Linux packages and source"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Selected Linux execution example only. This is not a trace of a visitor’s installation or a managed-service deployment.",
+      "status": "documented",
+      "basis": "platform-example",
+      "note": "Other operating systems are supported. Follow this path as an example, not a universal dependency."
+    },
+    {
+      "id": "cycles--linux",
+      "source": "cycles",
+      "target": "linux",
+      "type": "runs on",
+      "capability": "Host operating system",
+      "provides": "Cycles supports a Linux execution path.",
+      "adds": "Cycles supplies rendering algorithms and scene processing.",
+      "evidence": [
+        {
+          "url": "https://www.cycles-renderer.org/features/",
+          "title": "Cycles: supported platforms"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Selected Linux execution example only. This is not a trace of a visitor’s installation or a managed-service deployment.",
+      "status": "documented",
+      "basis": "platform-example",
+      "note": "Other operating systems are supported. Follow this path as an example, not a universal dependency."
+    },
+    {
+      "id": "linux--cpu",
+      "source": "linux",
+      "target": "cpu",
+      "type": "runs on",
+      "capability": "Machine instructions",
+      "provides": "The Linux x86 port runs on the corresponding processor architecture.",
+      "adds": "The kernel adds process scheduling, memory management and device access.",
+      "evidence": [
+        {
+          "url": "https://www.kernel.org/doc/html/latest/arch/x86/index.html",
+          "title": "Linux kernel: x86 architecture"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Selected x86 Linux example on a silicon processor; no specific manufacturer or chip model is established.",
+      "status": "documented",
+      "basis": "platform-example",
+      "note": ""
+    },
+    {
+      "id": "cpu--transistors",
+      "source": "cpu",
+      "target": "transistors",
+      "type": "implemented by",
+      "capability": "Electronic logic",
+      "provides": "Transistor circuits implement the logic inside a processor.",
+      "adds": "Processor design organizes those circuits into instruction execution and memory-related functions.",
+      "evidence": [
+        {
+          "url": "https://www.intel.com/content/www/us/en/education/k12/the-journey-inside/explore-the-curriculum/microprocessors.html",
+          "title": "Intel: how microprocessors work"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "General physical explanation of silicon microprocessors, not a supplier relationship.",
+      "status": "documented",
+      "basis": "physical",
+      "note": ""
+    },
+    {
+      "id": "transistors--silicon",
+      "source": "transistors",
+      "target": "silicon",
+      "type": "made from",
+      "capability": "Semiconductor substrate",
+      "provides": "Silicon supports the patterned transistor structures described in this chip-manufacturing example.",
+      "adds": "Fabrication creates functional devices and interconnections; material alone cannot execute instructions.",
+      "evidence": [
+        {
+          "url": "https://www.intel.com/content/www/us/en/newsroom/tech101/the-transistor-explained.html",
+          "title": "Intel: from transistors to silicon chips"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "Silicon-based chip example. Other semiconductor materials exist; no upstream vendor is inferred.",
+      "status": "documented",
+      "basis": "physical",
+      "note": ""
+    },
+    {
+      "id": "cpu--electricity",
+      "source": "cpu",
+      "target": "electricity",
+      "type": "requires power",
+      "capability": "Operating energy",
+      "provides": "Electrical energy is needed to run the computing hardware.",
+      "adds": "The computing system turns supplied energy into useful work and must manage power delivery and heat.",
+      "evidence": [
+        {
+          "url": "https://www.energy.gov/cmei/buildings/data-centers-and-servers",
+          "title": "US Department of Energy: data centers and servers"
+        }
+      ],
+      "verified": "2026-09-14",
+      "scope": "General operating requirement; no service-specific measurement, tariff or energy supplier is known.",
+      "status": "documented",
+      "basis": "physical",
+      "note": ""
+    }
+  ]
+}

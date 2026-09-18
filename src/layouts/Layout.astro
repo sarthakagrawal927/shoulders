@@ -1,0 +1,78 @@
+---
+import '@fontsource/libre-caslon-text/400.css';
+import '@fontsource-variable/public-sans';
+import '../styles/global.css';
+import { editorial } from '../lib/data';
+interface Props {
+  title?: string;
+  description?: string;
+  product?: string;
+}
+const {
+  title,
+  description = 'Explore what familiar software stands on, what its creators add, and which foundations you can use yourself.',
+  product,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title ? `${title} — Shoulders` : 'Shoulders — The software behind your software'}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f7f4ed" />
+    {editorial.status !== 'approved' && <meta name="robots" content="noindex,nofollow" />}
+    <meta
+      property="og:title"
+      content={title ? `${title} — Shoulders` : 'The software behind your software.'}
+    />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body data-product={product}>
+    <a class="skip-link" href="#main">
+      Skip to content
+    </a>
+    <header class="site-header wrap">
+      <a class="wordmark" href="/" aria-label="Shoulders home">
+        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" aria-hidden="true">
+          <path
+            d="M2 20V9h21v11M0 5h25M6 9v11m7-11v11m6-11v11M0 23h25"
+            stroke="currentColor"
+            stroke-width="1.5"
+          />
+        </svg>
+        Shoulders<span class="wordmark-dot">.</span>
+      </a>
+      <span class="header-note">Familiar tools. Deeper stories.</span>
+      <a class="header-link" href="/about/">
+        About the project <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer wrap">
+      <div>
+        <a class="wordmark" href="/">
+          Shoulders<span class="wordmark-dot">.</span>
+        </a>
+        <p>Good software stands on the work of many.</p>
+      </div>
+      <div class="footer-links">
+        <a href="/about/#method">How we research</a>
+        <a href="/request/">Suggest an exploration</a>
+        <a href="/privacy/">Privacy</a>
+      </div>
+      <p class="edition">
+        {editorial.status === 'approved'
+          ? 'Expanded edition · Six explorations'
+          : 'Editorial preview · Research awaiting human review'}
+      </p>
+    </footer>
+    <script src="../lib/browser.ts"></script>
+  </body>
+</html>

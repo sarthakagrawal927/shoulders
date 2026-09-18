@@ -1,0 +1,21 @@
+{
+  "tool": "built-in image_gen",
+  "reference": "src/data/cutaway.png",
+  "assets": [
+    {
+      "id": "vscode",
+      "prompt": "Use case: stylized-concept. Create one NEW companion illustration for Shoulders, using attached image ONLY as visual style and composition reference. Match its exquisite fine charcoal architectural engraving, warm ivory paper #f7f4ed, restrained watercolor, stone textures, small plants and tactile editorial atmosphere. Landscape 3:2. A complete small architectural cutaway isolated on ivory paper, no surrounding landscape. Preserve composition: finished upper room occupying top 45%, exactly THREE independent equal-width open stone arch bays underneath centered at 25%,50%,75% of width, with floor at 80% of image height. This layout must fit existing HTML labels. No text, lettering, logos, symbols, arrows or watermarks. Conceptual metaphor, not a literal technical diagram. A code maker's workshop: upper glass and timber room contains a generous drafting desk, two modest computer monitors, tool pegboard, books and task lamps. Left lower arch contains a globe-like mechanical orrery and a small desktop machine (desktop runtime); middle contains a terminal console and rolls of paper (terminal); right contains a tall library card catalogue with neatly arranged drawers and magnifying instrument (file search). Slight muted blue details, mostly monochrome. Distinct from the reference yet same family.",
+      "path": "src/data/cutaway-vscode.png"
+    },
+    {
+      "id": "supabase",
+      "prompt": "Use case: stylized-concept. Create one NEW companion illustration for Shoulders, using attached image ONLY as visual style and composition reference. Match its exquisite fine charcoal architectural engraving, warm ivory paper #f7f4ed, restrained watercolor, stone textures, small plants and tactile editorial atmosphere. Landscape 3:2. A complete small architectural cutaway isolated on ivory paper, no surrounding landscape. Preserve composition: finished upper room occupying top 45%, exactly THREE independent equal-width open stone arch bays underneath centered at 25%,50%,75% of width, with floor at 80% of image height. This layout must fit existing HTML labels. No text, lettering, logos, symbols, arrows or watermarks. Conceptual metaphor, not a literal technical diagram. A data utility house: upper glass room contains a tidy operations desk and small wall of gauges, botanical greenery, an open plan desk with ledger. Below: left arch houses handsome cylindrical data archive machinery and ordered record drawers (database), middle arch has a brass dispatch counter with orderly pigeonholes and conduits (data API), right arch has a compact independent electrical generator workbench (functions runtime). Slight muted sage details. Distinct building with shallow pitched timber roof, exact same frontal three-bay arrangement.",
+      "path": "src/data/cutaway-supabase.png"
+    },
+    {
+      "id": "obs-studio",
+      "prompt": "Use case: stylized-concept. Create one NEW companion illustration for Shoulders, using attached image ONLY as visual style and composition reference. Match its exquisite fine charcoal architectural engraving, warm ivory paper #f7f4ed, restrained watercolor, stone textures, small plants and tactile editorial atmosphere. Landscape 3:2. A complete small architectural cutaway isolated on ivory paper, no surrounding landscape. Preserve composition: finished upper room occupying top 45%, exactly THREE independent equal-width open stone arch bays underneath centered at 25%,50%,75% of width, with floor at 80% of image height. This layout must fit existing HTML labels. No text, lettering, logos, symbols, arrows or watermarks. Conceptual metaphor, not a literal technical diagram. A broadcast atelier: upper glass studio contains a video camera on tripod, hanging studio lights, microphone boom and editing desk. Below: left arch houses reel-to-reel film and audio machinery (media processing), middle arch a precision control console with rows of physical buttons (desktop interface), right arch an illuminated glass display cabinet with small screens (browser content). Subtle warm ochre details. Distinct studio building, same frontal three stone arches and upper room layout.",
+      "path": "src/data/cutaway-obs-studio.png"
+    }
+  ]
+}

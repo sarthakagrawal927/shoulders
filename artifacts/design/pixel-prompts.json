@@ -1,0 +1,20 @@
+{
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "id": "runtime",
+      "prompt": "Create an original editorial PIXEL ART illustration for Shoulders. Crisp deliberately visible square pixels, authentic carefully composed 32-bit game inventory/isometric scene, limited 16-color palette of warm ivory #f7f4ed, charcoal, muted teal, terracotta and ochre. Flat ivory background, spacious edges, single isolated vignette centered, landscape 3:2. Pixel grid and hard edges, no anti-aliased painterly rendering, no gradients, no blur. Sophisticated tactile little objects, readable silhouettes, no text, no letters, no logos, no UI. A tiny programmer's workbench with a CRT terminal, a stack of instruction cards, a small mechanical sorter and output tray. Scene about a JavaScript runtime transforming work into executable instructions. No building, no stone arches.",
+      "path": "src/data/pixel-runtime.png"
+    },
+    {
+      "id": "processor",
+      "prompt": "Create an original editorial PIXEL ART illustration for Shoulders. Crisp deliberately visible square pixels, authentic carefully composed 32-bit game inventory/isometric scene, limited 16-color palette of warm ivory #f7f4ed, charcoal, muted teal, terracotta and ochre. Flat ivory background, spacious edges, single isolated vignette centered, landscape 3:2. Pixel grid and hard edges, no anti-aliased painterly rendering, no gradients, no blur. Sophisticated tactile little objects, readable silhouettes, no text, no letters, no logos, no UI. An isometric open microprocessor package resting on a green circuit board, a magnifying lens revealing a grid of tiny switching cells, and a small silicon wafer beside it. Conceptual illustration, not a labelled scientific cross-section. No building, no stone arches.",
+      "path": "src/data/pixel-processor.png"
+    },
+    {
+      "id": "electricity",
+      "prompt": "Create an original editorial PIXEL ART illustration for Shoulders. Crisp deliberately visible square pixels, authentic carefully composed 32-bit game inventory/isometric scene, limited 16-color palette of warm ivory #f7f4ed, charcoal, muted teal, terracotta and ochre. Flat ivory background, spacious edges, single isolated vignette centered, landscape 3:2. Pixel grid and hard edges, no anti-aliased painterly rendering, no gradients, no blur. Sophisticated tactile little objects, readable silhouettes, no text, no letters, no logos, no UI. A compact electrical infrastructure vignette: a power substation transformer, orderly cables, a power conversion cabinet and a small server rack, with a restrained amber indicator light. No lightning bolts, no chosen generation source, no power company logos, no building facade.",
+      "path": "src/data/pixel-electricity.png"
+    }
+  ]
+}

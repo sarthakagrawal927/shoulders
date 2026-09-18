@@ -1,0 +1,34 @@
+---
+import TreeBranch from './TreeBranch.astro';
+import PixelObject from './PixelObject.astro';
+import Mark from './Mark.astro';
+import { outgoing, type Product } from '../lib/data';
+interface Props {
+  product: Product;
+}
+const { product: p } = Astro.props;
+const edges = outgoing(p.id).filter((r) => r.type !== 'compatible with');
+---
+
+<section class="dependency-tree" aria-label={`${p.name} dependency tree`}>
+  <div class="tree-root">
+    <PixelObject id={p.id} root />
+    <span class="tree-root-name">
+      <Mark id={p.id} size={24} />
+      <strong>{p.name}</strong>
+    </span>
+  </div>
+  <p class="tree-hint">
+    Every tool stands on something. <strong>Pick a foundation.</strong>
+  </p>
+  <div
+    class="tree-children"
+    role="group"
+    aria-label={`Foundations of ${p.name}`}
+    style={`--branches:${edges.length}`}
+  >
+    {edges.map((r, index) => (
+      <TreeBranch relation={r} product={p.id} ancestry={[]} column={index + 1} />
+    ))}
+  </div>
+</section>

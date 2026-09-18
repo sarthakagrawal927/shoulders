@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Privacy">
+  <div class="wrap prose">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Privacy</span>
+    </nav>
+    <h1>
+      A little less
+      <br />
+      <em>to collect.</em>
+    </h1>
+    <p class="lede">You do not need an account to explore Shoulders.</p>
+    <h2>Exploration events</h2>
+    <p>
+      This preview has no analytics provider connected. It prepares a bounded list of events in
+      browser memory: page views, foundation openings, followed relationships, second-product visits
+      and email-draft openings. Request text is never included.
+    </p>
+    <p>
+      When Do Not Track or Global Privacy Control is enabled, these events and their session markers
+      are disabled. Otherwise, a tab-scoped session marker remembers which of the curated products
+      you have visited and whether you have opened a foundation. Nothing is sent to an analytics
+      service by this preview.
+    </p>
+    <h2>Suggestions</h2>
+    <p>
+      The suggestion form opens your email app. Sending is your choice. The recipient then receives
+      the address and text you include in that email.
+    </p>
+    <h2>Links and assets</h2>
+    <p>
+      Fonts and illustrations are served with the site. Following an external source takes you to
+      its own website and privacy policy.
+    </p>
+  </div>
+</Layout>

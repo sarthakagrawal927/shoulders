@@ -1,0 +1,60 @@
+---
+import { entity, relationTypes, basisLabels, type Relation } from '../lib/data';
+interface Props {
+  relation: Relation;
+}
+const { relation: r } = Astro.props;
+---
+
+<details class="evidence">
+  <summary>
+    View evidence <span aria-hidden="true">↗</span>
+  </summary>
+  <div class="evidence-body">
+    <p class="evidence-relation">
+      <strong>{entity(r.source).name}</strong> → <strong>{entity(r.target).name}</strong>
+    </p>
+    <dl>
+      <div>
+        <dt>Evidence boundary</dt>
+        <dd>{basisLabels[r.basis as keyof typeof basisLabels]}</dd>
+      </div>
+      <div>
+        <dt>Relationship</dt>
+        <dd>
+          {r.type} — {relationTypes[r.type as keyof typeof relationTypes]}
+        </dd>
+      </div>
+      <div>
+        <dt>Provides</dt>
+        <dd>{r.capability}</dd>
+      </div>
+      <div>
+        <dt>Scope</dt>
+        <dd>{r.scope}</dd>
+      </div>
+      <div>
+        <dt>Checked</dt>
+        <dd>
+          <time datetime={r.verified}>
+            {new Date(`${r.verified}T00:00:00Z`).toLocaleDateString('en-GB', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric',
+              timeZone: 'UTC',
+            })}
+          </time>
+        </dd>
+      </div>
+    </dl>
+    <ul>
+      {r.evidence.map((source) => (
+        <li>
+          <a href={source.url} target="_blank" rel="noopener noreferrer">
+            {source.title} <span aria-label="opens in new tab">↗</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</details>

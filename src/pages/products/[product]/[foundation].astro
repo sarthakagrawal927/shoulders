@@ -1,0 +1,16 @@
+---
+import FoundationPage from '../../../components/FoundationPage.astro';
+import { products, foundations, paths } from '../../../lib/data';
+export function getStaticPaths() {
+  return products.flatMap((product) =>
+    foundations
+      .filter((f) => paths(product.id, f.id).length > 0)
+      .map((foundation) => ({
+        params: { product: product.id, foundation: foundation.id },
+        props: { product, foundation },
+      })),
+  );
+}
+---
+
+<FoundationPage {...Astro.props} />

@@ -1,0 +1,98 @@
+---
+import TreeBranch from './TreeBranch.astro';
+import PixelObject from './PixelObject.astro';
+import Evidence from './Evidence.astro';
+import { entity, outgoing, foundationHref, basisLabels, type Relation } from '../lib/data';
+interface Props {
+  relation: Relation;
+  product: string;
+  ancestry: string[];
+  column: number;
+}
+const { relation: r, product, ancestry, column } = Astro.props;
+const f = entity(r.target);
+const source = entity(r.source);
+const branch = [...ancestry, r.target];
+const key = branch.join('--');
+const children = outgoing(r.target).filter((edge) => edge.type !== 'compatible with');
+const foundation = f as import('../lib/data').Foundation;
+---
+
+<details
+  class="foundation tree-node"
+  id={key}
+  name={`siblings-${product}-${ancestry.join('--')}`}
+  data-foundation={f.id}
+  data-source={r.source}
+  style={`--column:${column}`}
+>
+  <summary>
+    <PixelObject id={f.id} />
+    <span class="tree-label">
+      {f.name}
+      <small>{r.type}</small>
+    </span>
+    <span class="tree-toggle" aria-hidden="true">
+      +
+    </span>
+  </summary>
+  <div class="tree-content" id={`layer-${key}`}>
+    <section class="tree-explanation" aria-label={`${f.name} explanation`}>
+      <div class="tree-explanation-heading">
+        <h2>{f.name}</h2>
+        <a class="permalink" href={`#layer-${key}`}>
+          Link to this layer ↗
+        </a>
+      </div>
+      {r.basis !== 'implementation' && (
+        <p class="tree-boundary">
+          <strong>{basisLabels[r.basis as keyof typeof basisLabels]}.</strong> {r.scope}
+        </p>
+      )}
+      <dl class="tree-facts">
+        <div>
+          <dt>What it provides</dt>
+          <dd>{r.provides}</dd>
+        </div>
+        <div>
+          <dt>What {source.name} adds</dt>
+          <dd>{r.adds}</dd>
+        </div>
+        <div>
+          <dt>Use it yourself</dt>
+          <dd>{foundation.responsibilities}</dd>
+        </div>
+      </dl>
+      {r.note && <p class="relationship-note">{r.note}</p>}
+      <div class="tree-actions">
+        <a
+          href={foundationHref(f.id, product)}
+          data-action="relationship_followed"
+          data-target={f.id}
+        >
+          Explore {f.name} →
+        </a>
+        <a href={foundation.docs} target="_blank" rel="noopener noreferrer">
+          Documentation ↗
+        </a>
+        <Evidence relation={r} />
+      </div>
+      {children.length === 0 && <p class="tree-end">{foundation.boundary}</p>}
+    </section>
+    {children.length > 0 && (
+      <div class="tree-next">
+        <p class="tree-next-label">Beneath {f.name}</p>
+        <div
+          class="tree-children"
+          role="group"
+          aria-label={`Foundations of ${f.name}`}
+          style={`--branches:${children.length}`}
+        >
+          {children.map((edge, index) => (
+            <TreeBranch relation={edge} product={product} ancestry={branch} column={index + 1} />
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</details>

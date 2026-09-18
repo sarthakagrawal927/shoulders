@@ -1,0 +1,28 @@
+---
+import { getImage } from 'astro:assets';
+import atlas from '../data/tree-objects-ivory.png';
+import power from '../data/pixel-electricity.png';
+interface Props {
+  id: string;
+  root?: boolean;
+}
+const { id, root = false } = Astro.props;
+const sprite = await getImage({
+  src: id === 'electricity' ? power : atlas,
+  width: id === 'electricity' ? 480 : 1536,
+  format: 'webp',
+});
+let position = '50% 0%';
+if (root) position = '0% 0%';
+else if (['xterm', 'node', 'deno', 'linux', 'spidermonkey'].includes(id)) position = '100% 0%';
+else if (['postgres', 'postgrest', 'opencolorio', 'nss'].includes(id)) position = '0% 100%';
+else if (['ripgrep', 'freetype', 'harfbuzz'].includes(id)) position = '50% 100%';
+else if (['cpu', 'transistors', 'silicon', 'v8', 'electricity'].includes(id))
+  position = '100% 100%';
+---
+
+<span
+  class:list={['pixel-object', { 'power-object': id === 'electricity' }]}
+  aria-hidden="true"
+  style={`--sprite: url('${sprite.src}'); --position: ${position}`}
+></span>

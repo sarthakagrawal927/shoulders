@@ -1,0 +1,97 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DependencyTree from '../../components/DependencyTree.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { products, foundationHref, paths } from '../../lib/data';
+export function getStaticPaths() {
+  return products.map((product) => ({ params: { product: product.id }, props: { product } }));
+}
+const { product: p } = Astro.props;
+---
+
+<Layout title={`Inside ${p.name}`} description={p.description} product={p.id}>
+  <div class="wrap tree-page">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{p.name}</span>
+    </nav>
+    <section class="product-intro">
+      <div>
+        <p class="kicker">{p.category}</p>
+        <h1>
+          Inside <em>{p.name}.</em>
+        </h1>
+        <p class="intro-description">{p.description}</p>
+      </div>
+      <p class="tree-product-adds">
+        <strong>What its creators add.</strong> {p.contribution}
+      </p>
+    </section>
+    <section class="product-section" aria-label={`${p.name} and its foundations`}>
+      <DependencyTree product={p} />
+      <details class="scope-disclosure">
+        <summary>Scope & what remains unresolved</summary>
+        <p>{p.scope}</p>
+        <p>{p.unresolved}</p>
+        <a href={p.url} target="_blank" rel="noopener noreferrer">
+          Visit {p.name} ↗
+        </a>
+        <p>
+          These connections describe technical roles. They do not establish payment, endorsement, or
+          the terms under which any particular user can redistribute a component.
+        </p>
+      </details>
+    </section>
+    {paths(p.id, 'silicon').length > 0 && (
+      <section class="depth-invitation">
+        <p class="kicker">Keep going</p>
+        <h2>Below the software.</h2>
+        <p>
+          This exploration reaches a selected Linux example, then the physical foundations of
+          computing. The trail identifies no particular host or supplier.
+        </p>
+        <div class="link-pair">
+          <a
+            class="text-link"
+            href={foundationHref('cpu', p.id)}
+            data-action="relationship_followed"
+            data-target="cpu"
+          >
+            Explore the processor →
+          </a>
+          <a
+            href={foundationHref('silicon', p.id)}
+            data-action="relationship_followed"
+            data-target="silicon"
+          >
+            Silicon
+          </a>
+          <a
+            href={foundationHref('electricity', p.id)}
+            data-action="relationship_followed"
+            data-target="electricity"
+          >
+            Electricity
+          </a>
+        </div>
+      </section>
+    )}
+    <section class="continue-section">
+      <div class="section-heading">
+        <h2>Another tool. Another story.</h2>
+        <a class="text-link" href="/">
+          All explorations <span aria-hidden="true">→</span>
+        </a>
+      </div>
+      <div class="product-grid two">
+        {products
+          .filter((product) => product.id !== p.id)
+          .slice(0, 2)
+          .map((product) => (
+            <ProductCard product={product} />
+          ))}
+      </div>
+    </section>
+  </div>
+</Layout>

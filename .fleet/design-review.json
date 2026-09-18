@@ -1,0 +1,167 @@
+{
+  "$schema": "fleet.design-review.v1",
+  "version": 1,
+  "project": "shoulders",
+  "target": "Restore substantial pixel-art presence to the approved branching tree",
+  "surfaceMode": "read",
+  "mode": "preserve",
+  "register": "product",
+  "context": {
+    "product": "PRODUCT.md",
+    "design": "DESIGN.md"
+  },
+  "direction": {
+    "references": [],
+    "probes": [
+      {
+        "id": "A",
+        "path": "artifacts/design/tree-directions/direction-a.png"
+      },
+      {
+        "id": "B",
+        "path": "artifacts/design/tree-directions/direction-b.png"
+      },
+      {
+        "id": "C",
+        "path": "artifacts/design/tree-directions/direction-c.png"
+      }
+    ],
+    "selected": "A \u2014 simplified branching tree",
+    "approval": "approved",
+    "before": "artifacts/design/tree-before-art.png",
+    "library": {
+      "strategy": "upstream-first",
+      "primary": "native-html-details",
+      "sources": [
+        "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details",
+        "https://preline.co/docs/components/accordion.html"
+      ],
+      "runtime": "none",
+      "customReplacement": {
+        "used": false,
+        "authorization": "not-required",
+        "reason": "Native browser disclosures selected for accessible no-JS operation; no bespoke standard control implementation."
+      }
+    },
+    "contract": {
+      "purpose": "Shoulders helps curious software users and builders understand familiar products by exploring documented foundations, creator contributions and independent ways to use those foundations.",
+      "purposeSource": "PRODUCT.md; owner PRD and direction A approval, 2026-09-14",
+      "canonicalPurpose": "Shoulders helps curious software users and builders understand familiar products by exploring documented foundations, creator contributions and independent ways to use those foundations.",
+      "purposeAlignment": "match",
+      "driftNote": "New standalone product. Canonical Fleet registration requires an operations-record change outside current production-config authorization; tracked in README and issue 1.",
+      "audience": "Curious software users and builders.",
+      "job": "Choose a familiar product, open a foundation, explain the role and added contribution, follow a documented use.",
+      "thesis": "A compact tree progressively reveals documented foundations, with one active explanation and a visible ancestry path.",
+      "system": "Ivory and charcoal editorial shell; sturdy Caslon Text and Public Sans; pine tree connectors and selected labels; substantial pixel objects, unboxed nodes, one supporting explanation.",
+      "signature": "A large pixel-art workstation supported by distinct illustrated foundation objects and continuous branches. Native labels and disclosures carry the real evidence.",
+      "risk": "A physical trail could be mistaken for an observed supplier chain. Every platform and physical edge is labelled, endpoint unknowns are explicit, and no vendor, power mix or price is inferred."
+    }
+  },
+  "evidence": {
+    "screenshots": [
+      {
+        "width": 390,
+        "path": "artifacts/design/after-390.png"
+      },
+      {
+        "width": 768,
+        "path": "artifacts/design/after-768.png"
+      },
+      {
+        "width": 1440,
+        "path": "artifacts/design/after-1440.png"
+      }
+    ],
+    "projectCheck": {
+      "command": "pnpm check && pnpm test:e2e; final copy refinement: pnpm build && pnpm test:e2e --grep 'follow the editor|physical endpoint|responsive, accessible' && pnpm exec astro check && pnpm exec prettier --check .",
+      "status": "pass"
+    },
+    "critique": {
+      "score": 36,
+      "maximum": 40
+    },
+    "audit": {
+      "score": 16,
+      "maximum": 20
+    },
+    "unresolved": {
+      "p0": 0,
+      "p1": 0
+    },
+    "detector": {
+      "posture": "advisory",
+      "findings": [
+        "CLI detector: zero findings. Early browser overlays flagged compact metadata, tracked kickers and intentional cream palette. Main prose raised to 15px; compact metadata remains an advisory. See artifacts/design/review.md."
+      ]
+    },
+    "comprehension": {
+      "status": "pass",
+      "reviewer": "Independent design_review agent, separate browser context; initial review and targeted recheck.",
+      "answers": {
+        "product": "Curated explainer showing the software underneath familiar tools.",
+        "audience": "Curious software users and builders.",
+        "value": "Understand foundations versus the product creators work.",
+        "mechanism": "Choose a product, open a foundation and follow documented deeper relationships.",
+        "proof": "Evidence disclosures, primary sources, scoped claims and explicit unresolved questions.",
+        "nextAction": "Open a foundation, read documentation, explore another tool or suggest an addition."
+      },
+      "purposeScore": {
+        "product": 24,
+        "audience": 14,
+        "value": 14,
+        "mechanism": 14,
+        "proof": 13,
+        "nextAction": 15,
+        "total": 94
+      },
+      "mismatches": []
+    },
+    "expansionReview": {
+      "reviewer": "Root implementation review; no fresh independent rescore claimed",
+      "scope": "Six-product edition; software/platform/physical boundary semantics, progressive evidence, new pixel art, responsive and keyboard workflows",
+      "tests": "8 unit/data tests; 17 browser tests; 88 static routes",
+      "screenshots": [
+        "artifacts/design/cpu-1440.png",
+        "artifacts/design/electricity-390.png",
+        "artifacts/design/firefox-390.png"
+      ],
+      "priorScores": "critique, audit and comprehension scores elsewhere in this receipt are historical original-edition reviews"
+    },
+    "treeReview": {
+      "reviewer": "Root implementation review; no independent rescore",
+      "approval": "Owner selected A but much simpler, then go",
+      "screenshots": [
+        "artifacts/design/tree-390.png",
+        "artifacts/design/tree-768.png",
+        "artifacts/design/tree-1440.png"
+      ],
+      "checks": "PASS: 8 data tests, 18 browser tests, 88 static routes, Astro check and Prettier. Nested no-JavaScript fragment manually verified in Chromium."
+    },
+    "illustratedTreeReview": {
+      "lane": "preserve approved tree direction; restore missing visual substance",
+      "reviewer": "Root browser review; no new independent score claimed",
+      "screenshots": [
+        "artifacts/design/illustrated-tree-390.png",
+        "artifacts/design/illustrated-tree-768.png",
+        "artifacts/design/illustrated-tree-1440.png"
+      ],
+      "findingsFixed": [
+        "28px line icons replaced by 160px pixel objects and a 260px root",
+        "Removed rectangular node panels",
+        "Connected branch endpoints across grid gaps",
+        "Wrapped long mobile foundation names",
+        "Removed multiply blend that darkened image backgrounds"
+      ],
+      "checks": "8 data tests and 88-page build pass; 17 browser tests passed initially, mobile overflow fixed and all 3 responsive tests passed on rerun",
+      "limitations": [
+        "Illustration is conceptual, not evidence or a measure of dependency size",
+        "Generated ivory atlas selected; attempted transparent edit rejected because output contained a painted checkerboard"
+      ],
+      "ownerDecision": "Existing A direction retained; owner requested stronger visual substance"
+    }
+  },
+  "ownerFeedback": {
+    "decision": "keep",
+    "note": "Owner explicitly selected A: Lets go with A. Recorded 2026-09-14. Initial fidelity gap corrected and independently rechecked. Owner subsequently requested stronger typography; bounded preserve correction replaces the thin display face. Prior independent scores predate this font correction; responsive browser and axe checks rerun at all three widths. Owner requested more illustrations in the same style. Three companion plates added to product pages and cards; preserved direction A. Source Atlas summary informs independent-use wording, without importing uninspected claims. Owner rejected repeated detailed artwork across cards. Restored the original simple product cards; companion illustrations remain only on exploration pages. Owner explicitly requested pixel art and more explorations down to electricity and silicon. Added Firefox, Blender and Godot, plus scoped physical trails and three selective pixel-art scenes. Owner subsequently selected simplified branching tree A and instructed implementation. Owner rejected the negligible treatment and requested a better execution. Restored substantial raster pixel artwork and unboxed connected branches within approved A."
+  }
+}
